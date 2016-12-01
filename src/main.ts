@@ -13,7 +13,8 @@ const App = () => (`
       <demo-bl-buttons></demo-bl-buttons>
       <demo-bl-toggle></demo-bl-toggle>
       <demo-bl-modal></demo-bl-modal>    
-      <demo-bl-tooltip></demo-bl-tooltip>    
+      <demo-bl-tooltip></demo-bl-tooltip>  
+      <demo-bl-input></demo-bl-input>
     </fieldset>
     
     <fieldset>
