@@ -10,11 +10,26 @@ const App = () => (`
     <h1>WC components catalogue</h1>
     <fieldset>
       <legend><h2>Blaze</h2></legend>
-      <demo-bl-buttons></demo-bl-buttons>
-      <demo-bl-toggle></demo-bl-toggle>
-      <demo-bl-modal></demo-bl-modal>    
-      <demo-bl-tooltip></demo-bl-tooltip>  
-      <demo-bl-input></demo-bl-input>
+      <fieldset>
+        <legend><h3>Buttons</h3></legend>
+        <demo-bl-buttons></demo-bl-buttons>
+      </fieldset>
+      <fieldset>
+        <legend><h3>Toggle</h3></legend>
+        <demo-bl-toggle></demo-bl-toggle>
+      </fieldset>
+      <fieldset>
+        <legend><h3>Modal</h3></legend>
+        <demo-bl-modal></demo-bl-modal>
+      </fieldset>
+      <fieldset>
+        <legend><h3>Tooltip</h3></legend>
+        <demo-bl-tooltip></demo-bl-tooltip>
+      </fieldset>
+      <fieldset>
+        <legend><h3>Input</h3></legend>
+        <demo-bl-input></demo-bl-input>
+      </fieldset>
     </fieldset>
     
     <fieldset>
