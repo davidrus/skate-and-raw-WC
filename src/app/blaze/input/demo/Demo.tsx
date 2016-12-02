@@ -11,15 +11,23 @@ export class Demo extends Component {
       <div>
         <Input color="error" value="error state"
                placeholder="placeholder"
+               onKeyup={() => { console.log("onKeyUp")}}
+               onFocus={() => { console.log("onFocus")}}
+               onBlur={() => { console.log("onBlur")}}
                onChange={() => { console.log("onChange")}}
         ></Input>
         <Input color="success" value="success state"
                onChange={() => { console.log("onChange")}}
+               size="xlarge"
         ></Input>
         <Input value="default state"
                onChange={() => { console.log("onChange")}}
+               size="super"
         ></Input>
-        <Input value="disabled state" disabled="disabled"></Input>
+        <Input value="disabled state"
+               disabled
+               size="xsmall"
+        ></Input>
       </div>
     ]
   }

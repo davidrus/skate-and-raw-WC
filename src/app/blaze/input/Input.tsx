@@ -7,14 +7,25 @@ const InputColors = {
   error: 'error'
 };
 
+const InputSizes = {
+  xsmall: 'xsmall',
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+  xlarge: 'xlarge',
+  'super': 'super' // super is reserved word!!!
+};
+
 type InputColorsType = typeof InputColors;
+type InputSizesType = typeof InputSizes;
 
 //public
 interface InputProps extends JSX.HTMLProps<Input> {
   value: string,
   color?: keyof InputColorsType,
   placeholder?: string,
-  disabled?: string,
+  disabled?: boolean,
+  size?: keyof InputSizesType,
 }
 
 export class Input extends Component {
@@ -27,14 +38,16 @@ export class Input extends Component {
       }),
       color: prop.string(),
       placeholder: prop.string(),
-      disabled: prop.string(),
+      disabled: prop.boolean(),
+      size: prop.string(),
     }
   }
 
   color = '';
   value = '';
+  size: string;
   placeholder: string;
-  disabled: string;
+  disabled: boolean;
 
   inputElement: HTMLInputElement;
 
@@ -49,15 +62,21 @@ export class Input extends Component {
   }
 
   renderCallback() {
-    const { color, value, placeholder, disabled } = this;
+    const { color, value, placeholder, disabled, size } = this;
     const className = css(
       'c-field',
       {
         'c-field--success': color === InputColors.success,
-        'c-field--error': color === InputColors.error
+        'c-field--error': color === InputColors.error,
+        'u-xsmall': size === InputSizes.xsmall,
+        'u-small': size === InputSizes.small,
+        'u-medium': size === InputSizes.medium,
+        'u-large': size === InputSizes.large,
+        'u-xlarge': size === InputSizes.xlarge,
+        'u-super': size === InputSizes.super
       }
     );
-    const isDisabled = disabled === 'disabled' ? true : false;
+
 
     return [
       <style>{styles}</style>,
